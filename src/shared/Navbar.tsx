@@ -33,7 +33,7 @@ const Navbar = () => {
     <div>
       <nav
         className={`bg-transparent shadow flex fixed z-[999] w-full ${
-          scrolling ? "bg-[#1b2329]" : "" // Add class "bg-dark" when scrolling
+          scrolling ? "bg-[#21292ff1]" : "" // Add class "bg-dark" when scrolling
         }`}
       >
         <div
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <div
               className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out
-               bg-[#21292F]
+               bg-[#1b2329]
                lg:mt-0 lg:p-0 text-white lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
                  isOpen
                    ? "translate-x-0 opacity-100"

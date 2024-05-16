@@ -4,6 +4,8 @@ import heroImage from "../..//assets/heroimage1.png";
 import { useState } from "react";
 import HomeCarosulCard from "./HomeCarosulCard";
 import FlashSale from "../flashSale";
+import TopCategories from "../TopCategories";
+import MostPopularProducts from "../MostPopularProducts";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +50,8 @@ const HomePage = () => {
 
       <Container>
         <FlashSale />
+        <TopCategories />
+        <MostPopularProducts />
       </Container>
     </div>
   );
