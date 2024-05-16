@@ -1,11 +1,30 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import logo from "../assets/logo.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
-  // Define isOpen state and setIsOpen function to toggle it
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
 
-  // Event handler function to toggle isOpen state
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 50) {
+        // Change 50 to the scroll position where you want the background color to change
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -13,27 +32,24 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className=" bg-transparent shadow flex  fixed z-[999] w-full
-      "
+        className={`bg-transparent shadow flex fixed z-[999] w-full ${
+          scrolling ? "bg-[#1b2329]" : "" // Add class "bg-dark" when scrolling
+        }`}
       >
         <div
           className="container  py-4  w-full max-w-[1230px] 
-         px-[20px] mx-auto"
+         px-[20px] mx-auto text-white"
         >
           <div className="lg:flex lg:items-center lg:justify-between">
             <div className="flex items-center justify-between">
-              <a href="#">
-                <img
-                  className="w-auto h-6 sm:h-7"
-                  src="https://merakiui.com/images/full-logo.svg"
-                  alt=""
-                />
-              </a>
+              <Link href="/">
+                <Image src={logo} height={120} width={120} alt="loog" />
+              </Link>
               <div className="flex lg:hidden">
                 <button
                   onClick={toggleMenu}
                   type="button"
-                  className="text-gray-500 text-gray-800 hover:text-gray-600 hover:text-gray-400 focus:outline-none focus:text-gray-600 focus:text-gray-400"
+                  className="text-white  focus:outline-none"
                   aria-label="toggle menu"
                 >
                   <svg
@@ -54,42 +70,57 @@ const Navbar = () => {
               </div>
             </div>
             <div
-              className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white 
-               lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
+              className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out
+               bg-[#21292F]
+               lg:mt-0 lg:p-0 text-white lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
                  isOpen
                    ? "translate-x-0 opacity-100"
                    : "opacity-0 -translate-x-full"
                }`}
             >
               <div className="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
-                <a
-                  href="#"
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-gray-800 "
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
-                  Join Slack
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-gray-800 "
+                  Home
+                </Link>
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform 
+                  rounded-md lg:mt-0 text-white "
                 >
-                  Browse Topics
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-gray-800 "
+                  Categories
+                </Link>
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
-                  Random Item
-                </a>
-                <a
-                  href="#"
-                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-gray-800 "
+                  Products
+                </Link>
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
-                  Experts
-                </a>
+                  Flash Sale
+                </Link>
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
+                >
+                  About Us
+                </Link>
+                <Link
+                  href="/"
+                  className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
+                >
+                  Contact Us
+                </Link>
               </div>
-              <div className="flex items-center mt-4 lg:mt-0">
+
+              {/* <div className="flex items-center mt-4 lg:mt-0">
                 <button
-                  className="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block dark:text-gray-800 hover: dark:hover:text-gray-400 focus: dark:focus:text-gray-400 focus:outline-none"
+                  className="hidden mx-4 text-gray-600 transition-colors duration-300 transform lg:block dark:text-white hover: dark:hover:text-gray-400 focus: dark:focus:text-gray-400 focus:outline-none"
                   aria-label="show notifications"
                 >
                   <svg
@@ -119,11 +150,11 @@ const Navbar = () => {
                       alt="avatar"
                     />
                   </div>
-                  <h3 className="mx-2  dark:text-gray-800 lg:hidden">
+                  <h3 className="mx-2  dark:text-white lg:hidden">
                     Khatab wedaa
                   </h3>
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
