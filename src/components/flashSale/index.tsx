@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const FlashSale = () => {
   return (
@@ -90,12 +91,14 @@ const FlashSale = () => {
                   <span className="text-gray-400 mr-2">$230</span> $200
                 </p>
               </div>
-              <button
-                className="mt-4 text-xl w-full text-white 
+              <Link href="/products/:productId">
+                <button
+                  className="mt-4 text-xl w-full text-white 
               bg-[#00739E] py-2 rounded-xl shadow-lg"
-              >
-                Buy Lesson
-              </button>
+                >
+                  Buy Lesson
+                </button>
+              </Link>
             </div>
           </div>
           <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">

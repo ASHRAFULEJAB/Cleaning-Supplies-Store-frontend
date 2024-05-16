@@ -33,7 +33,7 @@ const Navbar = () => {
     <div>
       <nav
         className={`bg-transparent shadow flex fixed z-[999] w-full ${
-          scrolling ? "bg-[#21292ff1]" : "" // Add class "bg-dark" when scrolling
+          scrolling ? "bg-[#1b2329f1]" : "" // Add class "bg-dark" when scrolling
         }`}
       >
         <div
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
             <div
               className={`absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out
-               bg-[#1b2329]
+               bg-[#21292F]
                lg:mt-0 lg:p-0 text-white lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center ${
                  isOpen
                    ? "translate-x-0 opacity-100"
@@ -93,13 +93,13 @@ const Navbar = () => {
                   Categories
                 </Link>
                 <Link
-                  href="/"
+                  href="/products"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
                   Products
                 </Link>
                 <Link
-                  href="/"
+                  href="/flash-sale"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
                   Flash Sale
@@ -111,10 +111,10 @@ const Navbar = () => {
                   About Us
                 </Link>
                 <Link
-                  href="/"
+                  href="/dashboard"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
-                  Contact Us
+                  Dashboard
                 </Link>
               </div>
 
