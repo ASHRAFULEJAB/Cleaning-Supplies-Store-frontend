@@ -1,9 +1,9 @@
-import FlashSale from "@/components/flashSale";
+import AllFlashSale from "@/components/flashSale/AllFlashSale";
 
 const FlashSalePage = () => {
   return (
     <div>
-      <FlashSale />
+      <AllFlashSale />
     </div>
   );
 };
