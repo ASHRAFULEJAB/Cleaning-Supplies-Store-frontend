@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <div>
       <nav
-        className={`bg-transparent shadow flex fixed z-[999] w-full ${
+        className={`bg-[#1b2329f1] shadow flex fixed z-[999] w-full ${
           scrolling ? "bg-[#1b2329f1]" : "" // Add class "bg-dark" when scrolling
         }`}
       >
