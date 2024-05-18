@@ -1,16 +1,23 @@
+"use client";
 import Link from "next/link";
 import logo from "../../assets/logo.png";
 import Image from "next/image";
 import DashboardTable from "./DashboardTable";
+import { useState } from "react";
 
 const DashboardHomePage = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!isSidebarOpen);
+  };
   return (
     <div>
       <div className="min-h-screen bg-gray-50/50">
         <aside
-          className="bg-[#1b2329f1] -translate-x-80
-         fixed inset-0 z-50   h-full w-72  transition-transform 
-         duration-300 xl:translate-x-0"
+          className={`bg-[#1b2329f1] ${
+            isSidebarOpen ? "translate-x-0" : "-translate-x-80"
+          } fixed inset-0 z-50 h-full w-72 transition-transform duration-300 xl:translate-x-0`}
         >
           <div className="relative border-b border-white/20">
             <Link className="flex items-center gap-4 py-6 px-8" href="/">
@@ -28,20 +35,21 @@ const DashboardHomePage = () => {
                  hover:bg-[#00739E] active:bg-[#00739E] absolute right-0 top-0 grid
                   rounded-br-none rounded-tl-none xl:hidden"
               type="button"
+              onClick={toggleSidebar}
             >
               <span className="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  stroke-width="2.5"
+                  strokeWidth="2.5"
                   stroke="currentColor"
                   aria-hidden="true"
                   className="h-5 w-5 text-white"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M6 18L18 6M6 6l12 12"
                   ></path>
                 </svg>
@@ -72,7 +80,7 @@ const DashboardHomePage = () => {
                       <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z"></path>
                     </svg>
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      dashboard
+                      All Products
                     </p>
                   </button>
                 </a>
@@ -209,7 +217,36 @@ const DashboardHomePage = () => {
           </div>
         </aside>
         <div className="p-4 xl:ml-80">
-          <nav className="block w-full max-w-full bg-transparent text-white shadow-none rounded-xl transition-all px-0 py-1">
+          <nav className="block w-full max-w-full bg-transparent 
+          text-white shadow-none rounded-xl transition-all px-0 py-1">
+            <div className="flex   items-center justify-between w-full px-4 mx-auto 
+            lg:flex-grow-0 lg:px-6">
+              <button
+                className="middle none font-sans font-bold center
+                 transition-all disabled:opacity-50 disabled:shadow-none 
+                 disabled:pointer-events-none w-8 h-8 rounded-lg text-xs text-[#23100b] xl:hidden"
+                type="button"
+                onClick={toggleSidebar}
+              >
+                <span className="absolute top-10 left-[350px] transform -translate-y-1/2 -translate-x-1/2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                    className="w-5 h-5 "
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M4 6h16M4 12h16m-7 6h7"
+                    ></path>
+                  </svg>
+                </span>
+              </button>
+            </div>
             <div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
               <div className="capitalize">
                 <nav aria-label="breadcrumb" className="w-max">
@@ -270,23 +307,31 @@ const DashboardHomePage = () => {
                 </button>
                 <a href="#">
                   <button
-                    className="middle none font-sans font-bold center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 rounded-lg text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 hidden items-center gap-1 px-4 xl:flex"
+                    className="middle none  center 
+                    transition-all disabled:opacity-50 disabled:shadow-none 
+                    disabled:pointer-events-none  py-3 rounded-lg 
+                     hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 
+                    hidden items-center gap-1 px-4 xl:flex"
                     type="button"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      className="h-5 w-5 text-blue-gray-500"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                        clip-rule="evenodd"
-                      ></path>
-                    </svg>
-                    Sign In{" "}
+                    <img
+                      src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg"
+                      className="rounded-full"
+                      style={{ height: "30px", width: "25px" }}
+                      alt="TE Avatar"
+                      loading="lazy"
+                    />
+                    <div>
+                      <strong
+                        className="ms-1 hidden sm:block uppercase font-sans font-bold text-xs
+                    text-gray-500
+                    "
+                      >
+                        Zahid Hossain
+                      </strong>
+
+                      <span className="text-xs text-black">admin</span>
+                    </div>
                   </button>
                   <button
                     className="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden"
