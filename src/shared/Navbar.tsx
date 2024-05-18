@@ -85,18 +85,16 @@ const Navbar = () => {
                 >
                   Home
                 </Link>
-                <Link
+                {/* <Link
                   href="/"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform 
                   rounded-md lg:mt-0 text-white "
-                >
-                  Categories
-                </Link>
+                ></Link> */}
                 <Link
                   href="/products"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
-                  Products
+                  Categories
                 </Link>
                 <Link
                   href="/flash-sale"
@@ -104,14 +102,14 @@ const Navbar = () => {
                 >
                   Flash Sale
                 </Link>
-                <Link
+                {/* <Link
                   href="/"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
                   About Us
-                </Link>
+                </Link> */}
                 <Link
-                  href="/dashboard"
+                  href="/dashboard/all-products"
                   className="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 text-white "
                 >
                   Dashboard

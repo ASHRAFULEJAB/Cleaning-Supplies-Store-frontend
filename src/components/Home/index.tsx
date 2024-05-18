@@ -30,14 +30,15 @@ const HomePage = () => {
                 className="text-3xl font-semibold text-white lg:text-4xl mt-20 text-wrap w-1/2
                mx-auto text-center "
               >
-                Crafting Comfort, Redefining Spaces. Your Home, Your Signature
-                Style! <span className="text-blue-400">Saas</span> Project
+                Supplies and Solutions for Every{" "}
+                <span className="text-blue-400"> Household!</span>
               </h1>
               <p className="text-white text-center text-wrap mx-auto w-1/2 mt-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                fringilla nunc in molestie feugiat. Nunc auctor consectetur
-                elit, quis pulvina. Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit. Nulla fringilla nunc in molestie feugiat
+                Grainger is America’s trusted source for MRO supplies and
+                industrial products. For over 90 years, we’ve built a tradition
+                of getting customers the products and services they need.
+                Grainger offers over a million products from thousands of
+                trusted MRO suppliers
               </p>
               <HomeCarosulCard />
               {/* <button className="w-full px-5 py-2 mt-4 text-sm font-medium text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">

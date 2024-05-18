@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const HomeCarosulCard = () => {
   return (
@@ -39,31 +40,33 @@ const HomeCarosulCard = () => {
         <div className=" lg:flex justify-center items-center">
           <div className="container lg:flex justify-center">
             <div className="max-w-sm py-10">
-              <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+              <div
+                className="bg-white relative shadow-lg hover:shadow-xl
+               transition duration-500 rounded-lg"
+              >
                 <Image
                   className="rounded-lg"
                   height={400}
                   width={400}
-                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80"
+                  src="https://images.unsplash.com/photo-1647577746559-c9a28c0d0870?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGRpc2h3YXNoaW5nfGVufDB8fDB8fHww"
                   alt=""
                 />
                 <div className="py-6 px-8 rounded-lg bg-white">
                   <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">
-                    Im supper dog for you.
+                    Cascade Burst Dish Soap.
                   </h1>
                   <p className="text-gray-700 tracking-wide">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Eum, labore. Ea debitis beatae sequi deleniti.
+                    Keep your dishes sparkling clean with our citrus-scented
+                    dish soap.
                   </p>
-                  <p>
-                    <span className="text-gray-400 mr-2">$230</span> $200
-                  </p>
-                  <button
-                    className="mt-6 py-2 px-4 bg-[#00739E] text-white font-bold 
-                  rounded-lg shadow-md hover:shadow-lg transition duration-300"
-                  >
-                    Buy Now
-                  </button>
+                  <Link href="/products">
+                    <p className="hover:text-[#00739E] hover:font-bold">
+                      <span className="text-gray-400 mr-2 hover:text-[#00739E]">
+                        $230
+                      </span>{" "}
+                      $200
+                    </p>
+                  </Link>
                 </div>
                 <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
                   <span className="text-md">15%</span>
@@ -72,78 +75,85 @@ const HomeCarosulCard = () => {
             </div>
           </div>
         </div>
-        <div className=" flex justify-center items-center">
-          <div className="container flex justify-center">
+        <div className=" lg:flex justify-center items-center">
+          <div className="container lg:flex justify-center">
             <div className="max-w-sm py-10">
-              <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+              <div
+                className="bg-white relative shadow-lg hover:shadow-xl
+               transition duration-500 rounded-lg"
+              >
                 <Image
                   className="rounded-lg"
                   height={400}
                   width={400}
-                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80"
+                  src="https://images.unsplash.com/photo-1594576182733-ad4ec76e674f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt=""
                 />
                 <div className="py-6 px-8 rounded-lg bg-white">
-                  <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">
-                    Im supper dog for you.
+                  <h1
+                    className="text-gray-700 font-bold text-2xl mb-3 
+                  hover:text-gray-900 hover:cursor-pointer"
+                  >
+                    Luxurious Dish Towels.
                   </h1>
                   <p className="text-gray-700 tracking-wide">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Eum, labore. Ea debitis beatae sequi deleniti.
+                    Soft and absorbent dish towels for all your kitchen needs.
                   </p>
-                  <p>
-                    <span className="text-gray-400 mr-2">$230</span> $200
-                  </p>
-                  <button
-                    className="mt-6 py-2 px-4 bg-[#00739E] text-white font-bold 
-                  rounded-lg shadow-md hover:shadow-lg transition duration-300"
-                  >
-                    Buy Now
-                  </button>
+                  <Link href="/products">
+                    <p className="hover:text-[#00739E] hover:font-bold">
+                      <span className="text-gray-400 mr-2 hover:text-[#00739E]">
+                        $299
+                      </span>{" "}
+                      $239
+                    </p>
+                  </Link>
                 </div>
                 <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
-                  <span className="text-md">15%</span>
+                  <span className="text-md">25%</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className=" flex justify-center items-center">
-          <div className="container flex justify-center">
-            <div className="max-w-sm py-5">
-              <div className="bg-white relative shadow-lg hover:shadow-xl transition duration-500 rounded-lg">
+        <div className=" lg:flex justify-center items-center">
+          <div className="container lg:flex justify-center">
+            <div className="max-w-sm py-10">
+              <div
+                className="bg-white relative shadow-lg hover:shadow-xl
+               transition duration-500 rounded-lg"
+              >
                 <Image
                   className="rounded-lg"
                   height={400}
                   width={400}
-                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1049&q=80"
+                  src="https://plus.unsplash.com/premium_photo-1661509951311-bbf3ad7399a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fFVsdGltYXRlJTIwRGlzaCUyMFNjcnViYmVyfGVufDB8fDB8fHww"
                   alt=""
                 />
                 <div className="py-6 px-8 rounded-lg bg-white">
                   <h1 className="text-gray-700 font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">
-                    Im supper dog for you.
+                    Ultimate Dish Scrubber.
                   </h1>
                   <p className="text-gray-700 tracking-wide">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Eum, labore. Ea debitis beatae sequi deleniti.
+                    Scrub away tough stains with our ergonomic and durable dish
+                    brush.
                   </p>
-                  <p>
-                    <span className="text-gray-400 mr-2">$230</span> $200
-                  </p>
-                  <button
-                    className="mt-6 py-2 px-4 bg-[#00739E] text-white font-bold 
-                  rounded-lg shadow-md hover:shadow-lg transition duration-300"
-                  >
-                    Buy Now
-                  </button>
+                  <Link href="/products">
+                    <p className="hover:text-[#00739E] hover:font-bold">
+                      <span className="text-gray-400 mr-2 hover:text-[#00739E]">
+                        $330
+                      </span>{" "}
+                      $300
+                    </p>
+                  </Link>
                 </div>
                 <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">
-                  <span className="text-md">15%</span>
+                  <span className="text-md">10%</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         <div className="absolute top-[600px] right-24 py-2 px-4  rounded-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
