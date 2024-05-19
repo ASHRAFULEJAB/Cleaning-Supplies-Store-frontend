@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-
-const ProductDetailsPage = ({ singleProduct }) => {
+import { Product } from "../types/types";
+interface ProductDetailsPageProps {
+  singleProduct: Product;
+}
+const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
+  singleProduct,
+}) => {
   const { title, price, ratings, brand, category, description, image } =
     singleProduct;
   return (

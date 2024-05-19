@@ -1,6 +1,12 @@
 import Image from "next/image";
+import { TrendingProduct } from "../types/types";
+interface TredningProductCardProps {
+  trendProduct: TrendingProduct;
+}
 
-const TredningProductCard = ({ trendProduct }) => {
+const TredningProductCard: React.FC<TredningProductCardProps> = ({
+  trendProduct,
+}) => {
   const { name, price, ratings, brand, category, description, image } =
     trendProduct;
   return (

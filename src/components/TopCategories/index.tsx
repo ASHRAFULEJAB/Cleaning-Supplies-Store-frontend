@@ -4,7 +4,7 @@ import TopCategoriesCard from "./TopCategoriesCard";
 const TopCategories = async () => {
   const res = await fetch("http://localhost:5000/products/dishwashing-items");
   const topCategories: { data: ProductCategory[] } = await res.json();
-  console.log(topCategories);
+  // console.log(topCategories);
   return (
     <div className="text-center">
       <div className="text-center">

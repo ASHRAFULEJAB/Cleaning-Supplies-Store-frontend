@@ -15,7 +15,7 @@ const DishwashingItemsPage = () => {
     const fetchProducts = async () => {
       try {
         if (category) {
-          console.log("Fetching products for name:", category); // Debug log
+          // console.log("Fetching products for name:", category); // Debug log
           const response = await fetch(
             `http://localhost:5000/products/dishwashing-items?category=${encodeURIComponent(
               category
@@ -25,7 +25,7 @@ const DishwashingItemsPage = () => {
             throw new Error("Failed to fetch products");
           }
           const data = await response.json();
-          console.log("Fetched data:", data); // Debug log
+          // console.log("Fetched data:", data); // Debug log
           setProducts(data.data);
         }
       } catch (error) {

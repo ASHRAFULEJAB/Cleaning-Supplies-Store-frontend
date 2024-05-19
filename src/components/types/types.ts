@@ -36,3 +36,17 @@ export type AllProductCardPage = {
   description: "";
   image: "";
 };
+
+export type TrendingProduct = {
+  _id: string;
+  title: string;
+  price: number;
+  image: string;
+  name?: string;
+  ratings?: number;
+  brand?: string;
+  description?: string;
+  category?: string;
+
+  // Add other relevant properties here
+};

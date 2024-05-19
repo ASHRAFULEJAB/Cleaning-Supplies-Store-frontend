@@ -1,12 +1,15 @@
 import ProductDetailsPage from "@/components/ProductDetails";
+interface Params {
+  _id: string;
+}
 
-const ProductDetails = async ({ params }) => {
+const ProductDetails = async ({ params }: { params: Params }) => {
   // console.log(params);
   const res = await fetch(
-    `http://localhost:5000/products/dishwashing-items/${params._id}`
-    // {
-    //   cache: "no-store",
-    // }
+    `http://localhost:5000/products/dishwashing-items/${params._id}`,
+    {
+      cache: "no-store",
+    }
   );
 
   // if (!res.ok) {

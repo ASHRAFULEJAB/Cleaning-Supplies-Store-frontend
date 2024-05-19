@@ -1,4 +1,6 @@
+import { TrendingProduct } from "../types/types";
 import TredningProductCard from "./TredningProductCard";
+
 
 const TrendingProducts = async () => {
   const res = await fetch("http://localhost:5000/trending-products", {
@@ -8,7 +10,7 @@ const TrendingProducts = async () => {
   });
   const trendingProducts = await res.json();
   // console.log(trendingProducts.data);
-  const alltrendingProduct = trendingProducts.data;
+  const alltrendingProduct: TrendingProduct[] = trendingProducts.data;
   return (
     <div className="mb-5">
       <div className="min-h-screen bg-transparent  justify-center items-center py-20">
