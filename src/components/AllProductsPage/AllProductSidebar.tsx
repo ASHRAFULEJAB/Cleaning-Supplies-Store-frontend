@@ -35,7 +35,7 @@ const AllProductSidebar = () => {
             defaultChecked
           />
           <span className="ml-2">$20.00 - $ 50.00</span>
-        </label>
+        </label> <br />
         <label className="inline-flex items-center" htmlFor="grayCheckBox">
           <input
             id="grayCheckBox"

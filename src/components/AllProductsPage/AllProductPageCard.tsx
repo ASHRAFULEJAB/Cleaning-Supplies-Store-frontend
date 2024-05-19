@@ -1,10 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Product } from "../types/types";
 
-const AllProductPageCard = ({ product }) => {
-  const { title, price, ratings, brand, category, description, image } =
+type AllPageCardProps = {
+  product: Product;
+};
+
+const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
+  const { id, title, price, ratings, brand, category, description, image } =
     product;
-
+  console.log(id);
   return (
     <div className="mt-8">
       <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
@@ -83,7 +88,7 @@ const AllProductPageCard = ({ product }) => {
               <span className="text-gray-400 mr-2">$230</span> {price}
             </p>
           </div>
-          <Link href="/products/:productId">
+          <Link href={`/products/${id}`}>
             <button className="mt-4 text-xl w-full text-white bg-[#00739E] py-2 rounded-xl shadow-lg">
               Buy Lesson
             </button>

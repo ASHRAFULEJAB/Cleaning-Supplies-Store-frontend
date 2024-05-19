@@ -4,11 +4,13 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import AllProductsPage from "../AllProductsPage";
 import AllProductPageCard from "../AllProductsPage/AllProductPageCard";
+import AllProductSidebar from "../AllProductsPage/AllProductSidebar";
+import { ProductCategory } from "../types/types";
 
 const DishwashingItemsPage = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductCategory[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -33,16 +35,19 @@ const DishwashingItemsPage = () => {
     };
 
     fetchProducts();
-  }, [name]);
+  }, [category]);
 
   return (
-    <div>
-      <h1>Dishwashing Items</h1>
+    <div className="lg:flex mr-10 ">
       {/* {name && <h2>Category: {name}</h2>} */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <AllProductSidebar />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 ">
         {products.map((productCategory) =>
           productCategory.products.map((product) => (
-            <AllProductPageCard key={product?.title} product={product} />
+            <>
+              <AllProductPageCard key={product?.title} product={product} />
+              {/* <AllProductsPage key={product?.title} product={product} /> */}
+            </>
           ))
         )}
       </div>

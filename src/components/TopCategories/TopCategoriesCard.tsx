@@ -1,6 +1,12 @@
 import Link from "next/link";
+import { ProductCategory } from "../types/types";
+interface TopCategoriesCardProps {
+  singleCategory: ProductCategory;
+}
 
-const TopCategoriesCard = ({ singleCategory }) => {
+const TopCategoriesCard: React.FC<TopCategoriesCardProps> = ({
+  singleCategory,
+}) => {
   const { category, imageUrl } = singleCategory;
 
   // Generate the dynamic URL based on the category name
