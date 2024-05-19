@@ -1,11 +1,10 @@
 "use client";
-import Container from "../ui/layout/Container";
-import heroImage from "../..//assets/heroimage1.png";
 import { useState } from "react";
-import HomeCarosulCard from "./HomeCarosulCard";
-import FlashSale from "../flashSale";
 import TopCategories from "../TopCategories";
-import MostPopularProducts from "../MostPopularProducts";
+import TrendingProducts from "../TrendingProducts";
+import FlashSale from "../flashSale";
+import Container from "../ui/layout/Container";
+import HomeCarosulCard from "./HomeCarosulCard";
 
 const HomePage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +51,7 @@ const HomePage = () => {
       <Container>
         <FlashSale />
         <TopCategories />
-        <MostPopularProducts />
+        <TrendingProducts />
       </Container>
     </div>
   );
