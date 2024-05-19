@@ -2,7 +2,6 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import AllProductsPage from "../AllProductsPage";
 import AllProductPageCard from "../AllProductsPage/AllProductPageCard";
 import AllProductSidebar from "../AllProductsPage/AllProductSidebar";
 import { ProductCategory } from "../types/types";

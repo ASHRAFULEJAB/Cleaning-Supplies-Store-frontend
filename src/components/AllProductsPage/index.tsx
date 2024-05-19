@@ -23,7 +23,7 @@ const AllProductsPage = () => {
             {/*  */}
           </div>
           <AllProductPageCard product={{
-            id: "",
+            _id: "",
             title: "",
             price: 0,
             ratings: 0,

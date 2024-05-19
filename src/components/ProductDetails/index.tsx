@@ -3,7 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductDetailsPage = () => {
+const ProductDetailsPage = ({ singleProduct }) => {
+  const { title, price, ratings, brand, category, description, image } =
+    singleProduct;
   return (
     <div className=" mx-28">
       <section className="py-12 sm:py-16 ">
@@ -17,7 +19,7 @@ const ProductDetailsPage = () => {
                     className="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
                   >
                     {" "}
-                    Home{" "}
+                    Products{" "}
                   </Link>
                 </div>
               </li>
@@ -30,8 +32,7 @@ const ProductDetailsPage = () => {
                       href="#"
                       className="rounded-md p-1 text-sm font-medium text-gray-600 focus:text-gray-900 focus:shadow hover:text-gray-800"
                     >
-                      {" "}
-                      Products{" "}
+                      {brand}
                     </Link>
                   </div>
                 </div>
@@ -47,7 +48,7 @@ const ProductDetailsPage = () => {
                       aria-current="page"
                     >
                       {" "}
-                      Bed{" "}
+                      {category}
                     </Link>
                   </div>
                 </div>
@@ -59,13 +60,16 @@ const ProductDetailsPage = () => {
             <div className="lg:col-span-3 lg:row-end-1">
               <div className="lg:flex lg:items-start">
                 <div className="lg:order-2 lg:ml-5">
-                  <div className=" overflow-hidden rounded-lg">
+                  <div
+                    className="overflow-hidden rounded-lg"
+                    style={{ width: "400px", height: "300px" }}
+                  >
                     <Image
-                      height={400}
-                      width={500}
-                      className=" w-full  object-cover"
-                      src="https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGNsZWFuaW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+                      className="w-full h-full object-cover"
+                      src={image}
                       alt=""
+                      width={400}
+                      height={300}
                     />
                   </div>
                 </div>
@@ -80,7 +84,7 @@ const ProductDetailsPage = () => {
                         height={150}
                         width={150}
                         className="h-full w-full object-cover"
-                        src="https://plus.unsplash.com/premium_photo-1679775635822-e313e43f9c04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsZWFuaW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+                        src={image}
                         alt=""
                       />
                     </button>
@@ -92,7 +96,7 @@ const ProductDetailsPage = () => {
                         height={150}
                         width={150}
                         className="h-full w-full object-cover"
-                        src="https://plus.unsplash.com/premium_photo-1679775635822-e313e43f9c04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsZWFuaW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+                        src={image}
                         alt=""
                       />
                     </button>
@@ -104,7 +108,7 @@ const ProductDetailsPage = () => {
                         height={150}
                         width={150}
                         className="h-full w-full object-cover"
-                        src="https://plus.unsplash.com/premium_photo-1679775635822-e313e43f9c04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGNsZWFuaW5nJTIwcHJvZHVjdHN8ZW58MHx8MHx8fDA%3D"
+                        src={image}
                         alt=""
                       />
                     </button>
@@ -115,7 +119,7 @@ const ProductDetailsPage = () => {
 
             <div className="lg:col-span-2 lg:row-span-2 lg:row-end-2">
               <h1 className="sm: text-2xl font-bold text-gray-900 sm:text-3xl">
-                Double Bed & Side Tables
+                {title}
               </h1>
 
               <div className="mt-5 flex items-center">
@@ -179,17 +183,12 @@ const ProductDetailsPage = () => {
                 <p className="ml-2 text-sm font-medium text-gray-500">
                   1,209 Reviews
                 </p>
+                <p className="ml-2 text-sm font-medium text-gray-500">
+                  {ratings} ratings
+                </p>
               </div>
 
-              <h2 className="mt-8 text-base text-gray-900">
-                Antislip tapes and stair treads and nosings have a raised
-                surface to add traction in wet, oily, and slippery areas to
-                prevent slips and falls. They install on stairs, landings,
-                ramps, and other flat surfaces where added grip is important.
-                Antislip stair nosings cover the front of the stair and have a
-                lip that protects the fore edge of the stair from damage caused
-                by incidental bumps.
-              </h2>
+              <h2 className="mt-8 text-base text-gray-900">{description}</h2>
               {/* <div className="mt-3 flex select-none flex-wrap items-center gap-1">
                 <label className="">
                   <input
@@ -270,7 +269,7 @@ const ProductDetailsPage = () => {
 
               <div className="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                 <div className="flex items-end">
-                  <h1 className="text-3xl font-bold">$60.50</h1>
+                  <h1 className="text-3xl font-bold">${price}</h1>
                   <span className="text-base">/month</span>
                 </div>
 
@@ -345,10 +344,11 @@ const ProductDetailsPage = () => {
                   <Link
                     href="#"
                     title=""
-                    className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"
+                    className="border-b-2 border-gray-900 py-4 text-sm font-medium
+                     text-gray-900 hover:border-gray-400 hover:text-gray-800"
                   >
                     {" "}
-                    Description{" "}
+                    {description}
                   </Link>
 
                   <Link

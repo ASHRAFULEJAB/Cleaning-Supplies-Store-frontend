@@ -7,11 +7,11 @@ type AllPageCardProps = {
 };
 
 const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
-  const { id, title, price, ratings, brand, category, description, image } =
+  const { _id, title, price, ratings, brand, category, description, image } =
     product;
-  console.log(id);
+  // console.log(id);
   return (
-    <div className="mt-8">
+    <div className="mt-8 mb-3">
       <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
         <div className="relative h-64">
           <Image
@@ -65,7 +65,7 @@ const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
                 />
               </svg>
             </span>
-            <p>3 Parts</p>
+            <p>{brand}</p>
           </div>
           <div className="flex space-x-1 items-center">
             <span>
@@ -85,12 +85,12 @@ const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
               </svg>
             </span>
             <p>
-              <span className="text-gray-400 mr-2">$230</span> {price}
+              <span className="text-gray-400 mr-2">$23</span> {price}
             </p>
           </div>
-          <Link href={`/products/${id}`}>
+          <Link href={`/products/dishwashing-items/${_id}`}>
             <button className="mt-4 text-xl w-full text-white bg-[#00739E] py-2 rounded-xl shadow-lg">
-              Buy Lesson
+              See Details
             </button>
           </Link>
         </div>
