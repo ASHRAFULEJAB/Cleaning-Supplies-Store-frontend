@@ -1,11 +1,11 @@
 import { TSale } from "../types/types";
+import Countdown from "../utils/Countdown";
 import FlashSaleCard from "./FlashSaleCard";
 
 const AllFlashSale = async () => {
+  // implementing SSR
   const res = await fetch("http://localhost:5000/flash-sale", {
-    next: {
-      revalidate: 30,
-    },
+    cache: "no-store",
   });
   const flashSales = await res.json();
   // console.log(flashSales);
@@ -22,18 +22,21 @@ const AllFlashSale = async () => {
     return (
       <div className="mb-5 mx-28 ">
         <div className="min-h-screen bg-transparent  justify-center items-center py-20">
-          <div className="mb-5  justify-between items-center">
-            <h1 className="text-[36px] font-meduim">Flash Sale</h1>
-            <h2 className="font-semibold">Showing 1–12 of 24 item(s)</h2>
-            <p className="text-wrap w-1/2">
-              Antislip tape has a gritted surface to prevent slips and falls on
-              stair treads, ramps, and flooring. It is backed with a
-              pressure-sensitive adhesive to secure the tape to the substrate.
-              Tape can be cut to any length to fit the application.
-            </p>
-            {/*  */}
+          <div className="lg:flex items-center justify-betweeen">
+            <div className="mb-5  justify-between items-center">
+              <h1 className="text-[36px] font-meduim">Flash Sale</h1>
+              <h2 className="font-semibold">Showing 1–12 of 24 item(s)</h2>
+              <p className="text-wrap ">
+                Antislip tape has a gritted surface to prevent slips and falls
+                on stair treads, <br />ramps, and flooring. It is backed with a
+                pressure-sensitive adhesive to secure <br />the tape to the substrate.
+                Tape can be cut to any length to fit the application.
+              </p>
+              {/*  */}
+            </div>
+            <Countdown />
           </div>
-          <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 space-y-4 md:space-y-0">
+          <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
             {homePageFlashSales?.map((sale: TSale) => (
               <FlashSaleCard key={sale._id} sale={sale} />
             ))}

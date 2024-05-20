@@ -5,6 +5,7 @@ interface Params {
 
 const ProductDetails = async ({ params }: { params: Params }) => {
   // console.log(params);
+  // implementing SSR
   const res = await fetch(
     `http://localhost:5000/products/dishwashing-items/${params._id}`,
     {

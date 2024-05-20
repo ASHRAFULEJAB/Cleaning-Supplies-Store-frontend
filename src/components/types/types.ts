@@ -23,6 +23,8 @@ export type ProductCategory = {
   _id: string;
   category: string;
   imageUrl: string;
+  ratings?: string;
+  price?: string;
   products: Product[];
 };
 
@@ -47,6 +49,4 @@ export type TrendingProduct = {
   brand?: string;
   description?: string;
   category?: string;
-
-  // Add other relevant properties here
 };

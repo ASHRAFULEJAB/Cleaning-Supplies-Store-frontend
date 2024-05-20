@@ -1,9 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
+import { ProductCategory } from "../types/types";
 import AllProductSidebar from "./AllProductSidebar";
-import AllProductPageCard from "./AllProductPageCard";
+import ProductAllCard from "./ProductAllCard";
 
-const AllProductsPage = () => {
+const AllProductsPage = async () => {
+  // implementing SSR
+  const res = await fetch("http://localhost:5000/products/dishwashing-items", {
+    cache: "no-store",
+  });
+  const allProducts: { data: ProductCategory[] } = await res.json();
+  // console.log(allProducts);
+
   return (
     <div className="lg:flex">
       {" "}
@@ -22,16 +28,14 @@ const AllProductsPage = () => {
             </p>
             {/*  */}
           </div>
-          <AllProductPageCard product={{
-            _id: "",
-            title: "",
-            price: 0,
-            ratings: 0,
-            brand: "",
-            category: "",
-            description: "",
-            image: ""
-          }}  />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 ">
+            {allProducts?.data?.map((singleProduct) => (
+              <ProductAllCard
+                key={singleProduct?._id}
+                singleProduct={singleProduct}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="">
