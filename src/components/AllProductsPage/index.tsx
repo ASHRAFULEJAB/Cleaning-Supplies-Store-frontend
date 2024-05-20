@@ -1,15 +1,51 @@
+"use client";
+import { useSearchParams } from "next/navigation";
 import { ProductCategory } from "../types/types";
 import AllProductSidebar from "./AllProductSidebar";
 import ProductAllCard from "./ProductAllCard";
+import { useEffect, useState } from "react";
 
-const AllProductsPage = async () => {
+const AllProductsPage = () => {
   // implementing SSR
-  const res = await fetch("http://localhost:5000/products/dishwashing-items", {
-    cache: "no-store",
-  });
-  const allProducts: { data: ProductCategory[] } = await res.json();
-  // console.log(allProducts);
+  // const res = await fetch("http://localhost:5000/products/dishwashing-items", {
+  //   cache: "no-store",
+  // });
+  // const allProducts: { data: ProductCategory[] } = await res.json();
+  // // console.log(allProducts);
 
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
+  const rating = searchParams.get("rating");
+  const brand = searchParams.get("brand");
+  const priceRange = searchParams.get("priceRange");
+
+  const [products, setProducts] = useState<ProductCategory[]>([]);
+  const allProducts = products;
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const url = new URL("http://localhost:5000/products/dishwashing-items");
+        if (category) url.searchParams.append("category", category);
+        if (rating) url.searchParams.append("rating", rating);
+        if (brand) url.searchParams.append("brand", brand);
+        if (priceRange) url.searchParams.append("priceRange", priceRange);
+
+        const response = await fetch(url.toString(), {
+          cache: "no-store",
+        });
+        if (!response.ok) {
+          throw new Error("Failed to fetch products");
+        }
+        const data = await response.json();
+        setProducts(data.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, [category, rating, brand, priceRange]);
   return (
     <div className="lg:flex">
       {" "}
@@ -29,7 +65,7 @@ const AllProductsPage = async () => {
             {/*  */}
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 ">
-            {allProducts?.data?.map((singleProduct) => (
+            {allProducts?.map((singleProduct) => (
               <ProductAllCard
                 key={singleProduct?._id}
                 singleProduct={singleProduct}
