@@ -50,3 +50,10 @@ export type TrendingProduct = {
   description?: string;
   category?: string;
 };
+
+export type DashProduct={
+  imageUrl: string;
+  category: string;
+  price: number;
+  ratings: number;
+}
