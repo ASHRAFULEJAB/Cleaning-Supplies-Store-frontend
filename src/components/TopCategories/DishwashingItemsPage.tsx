@@ -10,6 +10,7 @@ const DishwashingItemsPage = () => {
   const searchParams = useSearchParams();
   const category = searchParams.get("category");
   const [products, setProducts] = useState<ProductCategory[]>([]);
+  
 
   useEffect(() => {
     const fetchProducts = async () => {

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { TrendingProduct } from "../types/types";
 import TredningProductCard from "./TredningProductCard";
 
@@ -28,12 +29,14 @@ const TrendingProducts = async () => {
               premium-quality products!
             </p>
           </div>
-          <button
-            className=" w-[159px] h-[59px]  py-2 px-3 bg-[#282828] text-white font-bold 
+          <Link href="/products">
+            <button
+              className=" w-[159px] h-[59px]  py-2 px-3 bg-[#282828] text-white font-bold 
                   rounded-full shadow-md hover:shadow-lg transition duration-300"
-          >
-            View all
-          </button>
+            >
+              View all
+            </button>
+          </Link>
         </div>
         <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
           {alltrendingProduct.map((trendProduct) => (

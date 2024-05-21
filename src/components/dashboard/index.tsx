@@ -325,10 +325,12 @@ const DashboardHomePage = async () => {
                     hidden items-center gap-1 px-4 xl:flex"
                     type="button"
                   >
-                    <img
+                    <Image
                       src="https://tecdn.b-cdn.net/img/new/avatars/1.jpg"
                       className="rounded-full"
                       style={{ height: "30px", width: "25px" }}
+                      height={200}
+                      width={200}
                       alt="TE Avatar"
                       loading="lazy"
                     />
@@ -513,7 +515,9 @@ const DashboardHomePage = async () => {
                             </th>
 
                             <th scope="col" className="relative py-3.5 px-4">
-                              <span className="sr-only text-gray-700">Actions</span>
+                              <span className="sr-only text-gray-700">
+                                Actions
+                              </span>
                             </th>
                           </tr>
                         </thead>

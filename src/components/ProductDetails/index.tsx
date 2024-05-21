@@ -95,7 +95,8 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
                     </button>
                     <button
                       type="button"
-                      className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center"
+                      className="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2
+                       border-transparent text-center"
                     >
                       <Image
                         height={150}
