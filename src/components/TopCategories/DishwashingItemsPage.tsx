@@ -40,8 +40,8 @@ const DishwashingItemsPage = () => {
   return (
     <div className="lg:flex mr-10 ">
       {/* {name && <h2>Category: {name}</h2>} */}
-      <AllProductSidebar />
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 ">
+      {/* <AllProductSidebar /> */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 lg:mx-auto">
         {products.map((productCategory) =>
           productCategory.products.map((product) => (
             <>

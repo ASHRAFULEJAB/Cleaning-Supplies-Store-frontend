@@ -112,7 +112,7 @@ const DashboardHomePage = async () => {
                       ></path>
                     </svg>
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      profile
+                      Add Products
                     </p>
                   </button>
                 </a>
@@ -137,7 +137,7 @@ const DashboardHomePage = async () => {
                       ></path>
                     </svg>
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      tables
+                      Manage Flash Sale
                     </p>
                   </button>
                 </a>
@@ -162,13 +162,13 @@ const DashboardHomePage = async () => {
                       ></path>
                     </svg>
                     <p className="block antialiased font-sans text-base leading-relaxed text-inherit font-medium capitalize">
-                      notifactions
+                      Manage Categories
                     </p>
                   </button>
                 </a>
               </li>
             </ul>
-            <ul className="mb-4 flex flex-col gap-1">
+            {/* <ul className="mb-4 flex flex-col gap-1">
               <li className="mx-3.5 mt-4 mb-2">
                 <p className="block antialiased font-sans text-sm leading-normal text-white font-black uppercase opacity-75">
                   auth pages
@@ -220,7 +220,7 @@ const DashboardHomePage = async () => {
                   </button>
                 </a>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </aside>
         <div className="p-4 xl:ml-80">
@@ -340,7 +340,7 @@ const DashboardHomePage = async () => {
                     text-gray-500
                     "
                       >
-                        Zahid Hossain
+                        Ashraful Islam
                       </strong>
 
                       <span className="text-xs text-black">admin</span>

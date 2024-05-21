@@ -14,42 +14,43 @@ const AllProductsPage = () => {
   // // console.log(allProducts);
 
   const searchParams = useSearchParams();
-  const category = searchParams.get("category");
-  const rating = searchParams.get("rating");
-  const brand = searchParams.get("brand");
-  const priceRange = searchParams.get("priceRange");
+  const category = searchParams.get("category") || "";
+  const ratings = searchParams.get("ratings") || "";
+  const brand = searchParams.get("brand") || "";
+  const price = searchParams.get("price") || "";
 
   const [products, setProducts] = useState<ProductCategory[]>([]);
+  const [loading, setLoading] = useState(true);
   const allProducts = products;
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setLoading(true);
       try {
         const url = new URL("http://localhost:5000/products/dishwashing-items");
         if (category) url.searchParams.append("category", category);
-        if (rating) url.searchParams.append("rating", rating);
+        if (ratings) url.searchParams.append("ratings", ratings);
         if (brand) url.searchParams.append("brand", brand);
-        if (priceRange) url.searchParams.append("priceRange", priceRange);
+        if (price) url.searchParams.append("price", price);
 
-        const response = await fetch(url.toString(), {
-          cache: "no-store",
-        });
-        if (!response.ok) {
-          throw new Error("Failed to fetch products");
-        }
+        const response = await fetch(url.toString(), { cache: "no-store" });
+        if (!response.ok) throw new Error("Failed to fetch products");
+
         const data = await response.json();
         setProducts(data.data);
       } catch (error) {
         console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProducts();
-  }, [category, rating, brand, priceRange]);
+  }, [category, ratings, brand, price]);
   return (
     <div className="lg:flex">
       {" "}
-      <AllProductSidebar />
+      <AllProductSidebar  />
       <div className="mb-5 mx-20 ">
         <div className="min-h-screen bg-transparent  justify-center items-center py-20">
           <div className="mb-5  justify-between items-center">

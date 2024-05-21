@@ -2,7 +2,7 @@ import ProductDetailsPage from "@/components/ProductDetails";
 interface Params {
   _id: string;
 }
-// This function fetches product IDs to be statically generated
+// implementing SSG
 export const generateStaticParams = async () => {
   try {
     const res = await fetch("http://localhost:5000/products/dishwashing-items");
@@ -12,7 +12,7 @@ export const generateStaticParams = async () => {
     }
 
     const response = await res.json();
-    console.log("Fetched response:", response); // Log the full response
+    // console.log("Fetched response:", response); // Log the full response
 
     // Assuming the response has a data property containing an array of products
     const products = response.data; // Adjust this line based on actual response structure
@@ -21,7 +21,7 @@ export const generateStaticParams = async () => {
       throw new Error("Fetched data is not an array");
     }
 
-    return products.map((product) => ({
+    return products.slice(0, 10).map((product) => ({
       _id: product._id,
     }));
   } catch (error) {
