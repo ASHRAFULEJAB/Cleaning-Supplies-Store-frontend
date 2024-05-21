@@ -6,13 +6,6 @@ import ProductAllCard from "./ProductAllCard";
 import { useEffect, useState } from "react";
 
 const AllProductsPage = () => {
-  // implementing SSR
-  // const res = await fetch("http://localhost:5000/products/dishwashing-items", {
-  //   cache: "no-store",
-  // });
-  // const allProducts: { data: ProductCategory[] } = await res.json();
-  // // console.log(allProducts);
-
   const searchParams = useSearchParams();
   const category = searchParams.get("category") || "";
   const ratings = searchParams.get("ratings") || "";
@@ -50,7 +43,7 @@ const AllProductsPage = () => {
   return (
     <div className="lg:flex">
       {" "}
-      <AllProductSidebar  />
+      <AllProductSidebar />
       <div className="mb-5 mx-20 ">
         <div className="min-h-screen bg-transparent  justify-center items-center py-20">
           <div className="mb-5  justify-between items-center">
@@ -89,9 +82,9 @@ const AllProductsPage = () => {
               >
                 {" "}
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />{" "}
               </svg>{" "}
             </button>{" "}

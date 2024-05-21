@@ -9,15 +9,15 @@ type AllPageCardProps = {
 const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
   const { _id, title, price, ratings, brand, category, description, image } =
     product;
-  // console.log(id);
+
   return (
     <div className="mt-8 mb-3">
       <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
         <div className="relative h-64">
           <Image
-            height={256} // Set fixed height to ensure uniformity
-            width={256} // Set fixed width to ensure uniformity
-            className="object-cover w-full h-full rounded-xl" // Cover the container and maintain aspect ratio
+            height={256}
+            width={256}
+            className="object-cover w-full h-full rounded-xl"
             src={image}
             alt={title}
           />

@@ -11,7 +11,7 @@ const FlashSale = async () => {
     },
   });
   const flashSales = await res.json();
-  // console.log(flashSales);
+  
   if (flashSales.data) {
     const existFlashSale = flashSales.data.filter(
       (sale: TSale) => sale.flashSale === true

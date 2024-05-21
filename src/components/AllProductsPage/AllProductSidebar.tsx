@@ -118,7 +118,8 @@ const AllProductSidebar = () => {
       </div>
       <button
         onClick={handleFilter}
-        className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition duration-200"
+        className="w-full py-2 px-4 bg-[#282828] text-white font-semibold rounded
+         hover:bg-[#282828] transition duration-200"
       >
         Apply Filters
       </button>

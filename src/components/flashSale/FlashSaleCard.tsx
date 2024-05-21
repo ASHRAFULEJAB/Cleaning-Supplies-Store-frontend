@@ -1,4 +1,3 @@
-// FlashSaleCard.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +19,6 @@ const FlashSaleCard: React.FC<FlashSaleCardProps> = ({ sale }) => {
   } = sale;
   const saleTime = calculateTimeDifference(creationTime);
 
-  
   return (
     <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
       <div className="relative w-full h-[300px]">
@@ -98,11 +96,6 @@ const FlashSaleCard: React.FC<FlashSaleCardProps> = ({ sale }) => {
             {discountedPrice}
           </p>
         </div>
-        {/* <Link href={`/products/${_id}`}>
-          <button className="mt-4 text-xl w-full text-white bg-[#00739E] py-2 rounded-xl shadow-lg">
-            Buy Now
-          </button>
-        </Link> */}
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ const flashSales = [
     price: 12.99,
     flashSale: true,
     creationTime: "2023-05-20T10:00:00Z",
-    endTime: "2024-05-21T10:00:00Z", // 1 day flash sale
+    endTime: "2024-06-15T10:00:00Z", // how much day for flash sale
   },
   {
     _id: "2",
@@ -18,9 +18,9 @@ const flashSales = [
     price: 15.99,
     flashSale: true,
     creationTime: "2023-05-20T12:00:00Z",
-    endTime: "2024-05-21T12:00:00Z", // 1 day flash sale
+    endTime: "2024-06-12T12:00:00Z", // how much  day for flash sale
   },
-  // Add more flash sale items as needed
+  
 ];
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState<string>("");

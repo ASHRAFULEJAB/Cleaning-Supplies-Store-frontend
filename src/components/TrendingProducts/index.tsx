@@ -10,7 +10,7 @@ const TrendingProducts = async () => {
     },
   });
   const trendingProducts = await res.json();
-  // console.log(trendingProducts.data);
+
   const alltrendingProduct: TrendingProduct[] = trendingProducts.data;
   return (
     <div className="mb-5">

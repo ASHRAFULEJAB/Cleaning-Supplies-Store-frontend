@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ProductCategory } from "../types/types";
 
 const ProductAllCard = ({
@@ -13,9 +12,9 @@ const ProductAllCard = ({
       <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
         <div className="relative h-64">
           <Image
-            height={256} // Set fixed height to ensure uniformity
-            width={256} // Set fixed width to ensure uniformity
-            className="object-cover w-full h-full rounded-xl" // Cover the container and maintain aspect ratio
+            height={256}
+            width={256}
+            className="object-cover w-full h-full rounded-xl"
             src={imageUrl}
             alt=""
           />
@@ -86,11 +85,6 @@ const ProductAllCard = ({
               <span className="text-gray-400 mr-2">$23</span> {price}
             </p>
           </div>
-          {/* <Link href={`/products/dishwashing-items/${_id}`}>
-            <button className="mt-4 text-xl w-full text-white bg-[#00739E] py-2 rounded-xl shadow-lg">
-              See Details
-            </button>
-          </Link> */}
         </div>
       </div>
     </div>

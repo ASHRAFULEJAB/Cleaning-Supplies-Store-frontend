@@ -8,7 +8,7 @@ const AllFlashSale = async () => {
     cache: "no-store",
   });
   const flashSales = await res.json();
-  // console.log(flashSales);
+
   if (flashSales.data) {
     const existFlashSale = flashSales.data.filter(
       (sale: TSale) => sale.flashSale === true
@@ -28,11 +28,12 @@ const AllFlashSale = async () => {
               <h2 className="font-semibold">Showing 1–12 of 24 item(s)</h2>
               <p className="text-wrap ">
                 Antislip tape has a gritted surface to prevent slips and falls
-                on stair treads, <br />ramps, and flooring. It is backed with a
-                pressure-sensitive adhesive to secure <br />the tape to the substrate.
-                Tape can be cut to any length to fit the application.
+                on stair treads, <br />
+                ramps, and flooring. It is backed with a pressure-sensitive
+                adhesive to secure <br />
+                the tape to the substrate. Tape can be cut to any length to fit
+                the application.
               </p>
-              {/*  */}
             </div>
             <Countdown />
           </div>
@@ -57,9 +58,9 @@ const AllFlashSale = async () => {
               >
                 {" "}
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />{" "}
               </svg>{" "}
             </button>{" "}

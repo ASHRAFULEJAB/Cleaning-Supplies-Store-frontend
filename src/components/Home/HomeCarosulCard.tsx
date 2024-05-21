@@ -6,20 +6,6 @@ import Link from "next/link";
 const HomeCarosulCard = () => {
   return (
     <>
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth="1.5"
-        stroke="currentColor"
-        className="w-6 h-6 text-white"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-        />
-      </svg> */}
       <div className="grid lg:grid-cols-3 grid-cols-1 lg:mx-40 ">
         <div className="absolute top-[600px] left-24 py-2 px-4  rounded-lg">
           <svg
