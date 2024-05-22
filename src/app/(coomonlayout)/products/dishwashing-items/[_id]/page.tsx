@@ -5,7 +5,9 @@ interface Params {
 // implementing SSG
 export const generateStaticParams = async () => {
   try {
-    const res = await fetch("http://localhost:5000/products/dishwashing-items");
+    const res = await fetch(
+      "https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items"
+    );
 
     if (!res.ok) {
       throw new Error(`Failed to fetch, status: ${res.status}`);
@@ -31,7 +33,7 @@ export const generateStaticParams = async () => {
 const ProductDetails = async ({ params }: { params: Params }) => {
   // implementing SSR
   const res = await fetch(
-    `http://localhost:5000/products/dishwashing-items/${params._id}`,
+    `https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items/${params._id}`,
     {
       cache: "no-store",
     }

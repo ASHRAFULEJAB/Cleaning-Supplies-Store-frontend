@@ -5,13 +5,16 @@ import { TSale } from "../types/types";
 const FlashSale = async () => {
   // implementing ISR
 
-  const res = await fetch("http://localhost:5000/flash-sale", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://cleaning-store-nextjs-assignment8-backend.vercel.app/flash-sale",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const flashSales = await res.json();
-  
+
   if (flashSales.data) {
     const existFlashSale = flashSales.data.filter(
       (sale: TSale) => sale.flashSale === true

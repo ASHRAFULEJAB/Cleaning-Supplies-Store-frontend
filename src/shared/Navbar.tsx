@@ -26,6 +26,7 @@ const Navbar = () => {
   }, []);
 
   const toggleMenu = () => {
+    console.log("cilcked");
     setIsOpen(!isOpen);
   };
 

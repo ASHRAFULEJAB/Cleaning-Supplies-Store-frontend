@@ -2,7 +2,9 @@ import { ProductCategory } from "../types/types";
 import TopCategoriesCard from "./TopCategoriesCard";
 
 const TopCategories = async () => {
-  const res = await fetch("http://localhost:5000/products/dishwashing-items");
+  const res = await fetch(
+    "https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items"
+  );
   const topCategories: { data: ProductCategory[] } = await res.json();
 
   return (

@@ -63,9 +63,9 @@ const AllProductSidebar = () => {
   };
 
   return (
-    <div className="w-1/4 p-4 mt-16">
+    <div className="lg:w-1/4 p-4 lg:mt-16">
       <h2 className="text-lg font-semibold mb-4">Filters</h2>
-      <div className="mb-4">
+      <div className="mb-4 lg:mt-0 mt-10">
         <label className="block text-sm font-medium text-gray-700">
           Category
         </label>

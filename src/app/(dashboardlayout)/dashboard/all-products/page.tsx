@@ -3,9 +3,12 @@ import { ProductCategory } from "@/components/types/types";
 
 const Dashboard = async () => {
   // implementing SSR
-  const res = await fetch("http://localhost:5000/products/dishwashing-items", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items",
+    {
+      cache: "no-store",
+    }
+  );
   const dashboardProducts: { data: ProductCategory[] } = await res.json();
   return (
     <div>

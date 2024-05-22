@@ -2,13 +2,15 @@ import Link from "next/link";
 import { TrendingProduct } from "../types/types";
 import TredningProductCard from "./TredningProductCard";
 
-
 const TrendingProducts = async () => {
-  const res = await fetch("http://localhost:5000/trending-products", {
-    next: {
-      revalidate: 30,
-    },
-  });
+  const res = await fetch(
+    "https://cleaning-store-nextjs-assignment8-backend.vercel.app/trending-products",
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
   const trendingProducts = await res.json();
 
   const alltrendingProduct: TrendingProduct[] = trendingProducts.data;

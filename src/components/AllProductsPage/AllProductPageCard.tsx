@@ -11,8 +11,9 @@ const AllProductPageCard: React.FC<AllPageCardProps> = ({ product }) => {
     product;
 
   return (
-    <div className="mt-8 mb-3">
-      <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+    <div className="lg:mt-8 mb-3 mt-20">
+      <div className="lg:max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg 
+      transform hover:scale-105 transition duration-500">
         <div className="relative h-64">
           <Image
             height={256}

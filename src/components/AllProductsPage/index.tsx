@@ -20,7 +20,9 @@ const AllProductsPage = () => {
     const fetchProducts = async () => {
       setLoading(true);
       try {
-        const url = new URL("http://localhost:5000/products/dishwashing-items");
+        const url = new URL(
+          "https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items"
+        );
         if (category) url.searchParams.append("category", category);
         if (ratings) url.searchParams.append("ratings", ratings);
         if (brand) url.searchParams.append("brand", brand);
@@ -44,7 +46,7 @@ const AllProductsPage = () => {
     <div className="lg:flex">
       {" "}
       <AllProductSidebar />
-      <div className="mb-5 mx-20 ">
+      <div className="mb-5 lg:mx-20 mx-3 ">
         <div className="min-h-screen bg-transparent  justify-center items-center py-20">
           <div className="mb-5  justify-between items-center">
             <h1 className="text-[36px] font-meduim">
@@ -118,7 +120,8 @@ const AllProductsPage = () => {
         </div>
 
         <button
-          className=" w-[159px] h-[59px] lg:ml-[430px]  py-2 px-3 bg-[#282828] text-white font-bold 
+          className=" w-[159px] h-[59px] ml-[100px] lg:ml-[430px]  py-2 px-3 bg-[#282828]
+           text-white font-bold 
                   rounded-full shadow-md hover:shadow-lg transition duration-300"
         >
           Load More

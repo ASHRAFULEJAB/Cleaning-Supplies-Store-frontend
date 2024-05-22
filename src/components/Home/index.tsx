@@ -19,7 +19,7 @@ const HomePage = () => {
           className="w-full bg-center bg-cover h-full"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80')",
+              "url('https://plus.unsplash.com/premium_photo-1683140812184-f6fb14f2a531?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
           }}
         >
           <div className="flex items-center   justify-center w-full h-full bg-gray-900/40">

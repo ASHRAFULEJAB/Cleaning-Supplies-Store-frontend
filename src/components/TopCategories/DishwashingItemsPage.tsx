@@ -15,7 +15,7 @@ const DishwashingItemsPage = () => {
       try {
         if (category) {
           const response = await fetch(
-            `http://localhost:5000/products/dishwashing-items?category=${encodeURIComponent(
+            `https://cleaning-store-nextjs-assignment8-backend.vercel.app/products/dishwashing-items?category=${encodeURIComponent(
               category
             )}`
           );
@@ -36,7 +36,7 @@ const DishwashingItemsPage = () => {
 
   return (
     <div className="lg:flex mr-10 ">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-16 ml-16 lg:mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4  ml-16 lg:mx-auto">
         {products.map((productCategory) =>
           productCategory.products.map((product) => (
             <>

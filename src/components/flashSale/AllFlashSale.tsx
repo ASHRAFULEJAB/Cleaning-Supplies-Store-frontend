@@ -4,9 +4,12 @@ import FlashSaleCard from "./FlashSaleCard";
 
 const AllFlashSale = async () => {
   // implementing SSR
-  const res = await fetch("http://localhost:5000/flash-sale", {
-    cache: "no-store",
-  });
+  const res = await fetch(
+    "https://cleaning-store-nextjs-assignment8-backend.vercel.app/flash-sale",
+    {
+      cache: "no-store",
+    }
+  );
   const flashSales = await res.json();
 
   if (flashSales.data) {
@@ -20,7 +23,7 @@ const AllFlashSale = async () => {
     );
 
     return (
-      <div className="mb-5 mx-28 ">
+      <div className="mb-5 lg:mx-28 mx-5 ">
         <div className="min-h-screen bg-transparent  justify-center items-center py-20">
           <div className="lg:flex items-center justify-betweeen">
             <div className="mb-5  justify-between items-center">
@@ -94,7 +97,8 @@ const AllFlashSale = async () => {
         </div>
 
         <button
-          className=" w-[159px] h-[59px] lg:ml-[580px]  py-2 px-3 bg-[#282828] text-white font-bold 
+          className=" w-[159px] h-[59px] ml-[100px] lg:ml-[580px]  py-2 px-3 bg-[#282828]
+           text-white font-bold 
                   rounded-full shadow-md hover:shadow-lg transition duration-300"
         >
           Load More

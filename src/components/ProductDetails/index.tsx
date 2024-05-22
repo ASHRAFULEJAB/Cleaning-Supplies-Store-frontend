@@ -12,7 +12,7 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
   const { title, price, ratings, brand, category, description, image } =
     singleProduct;
   return (
-    <div className=" mx-28">
+    <div className=" lg:mx-28">
       <section className="py-12 sm:py-16 ">
         <div className="container mx-auto px-4 mt-5">
           <nav className="flex">
@@ -65,12 +65,9 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
             <div className="lg:col-span-3 lg:row-end-1">
               <div className="lg:flex lg:items-start">
                 <div className="lg:order-2 lg:ml-5">
-                  <div
-                    className="overflow-hidden rounded-lg"
-                    style={{ width: "400px", height: "300px" }}
-                  >
+                  <div className="overflow-hidden rounded-lg w-full h-auto lg:w-[400px] lg:h-[300px]">
                     <Image
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto object-cover"
                       src={image}
                       alt=""
                       width={400}
