@@ -13,8 +13,10 @@ const TopCategories = async () => {
       <div className="text-center">
         <h1 className="text-[36px] font-meduim">Top Categories</h1>
         <p className="text-wrap w-1/2 mx-auto mb-5">
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam.
+          Discover our top categories, featuring a diverse range of products
+          tailored to meet your needs. From the latest in tech and electronics
+          to stylish home decor and essential kitchen gadgets, explore the best
+          we have to offer and find exactly what you’re looking for.
         </p>
       </div>
 

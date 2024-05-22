@@ -345,20 +345,31 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
               <div className="mt-8 flow-root sm:mt-12">
                 <h1 className="text-3xl font-bold">Delivered To Your Door</h1>
                 <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                  accusantium nesciunt fuga.
+                  Enjoy the convenience of having your essential cleaning
+                  supplies delivered directly to your doorstep. We partner with
+                  reliable delivery services to ensure your order arrives
+                  promptly and hassle-free.
                 </p>
                 <h1 className="mt-8 text-3xl font-bold">
-                  From the Fine Farms of Brazil
+                  From Trusted Suppliers
                 </h1>
                 <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                  numquam enim facere.
+                  Our cleaning products are sourced from reputable suppliers
+                  known for their high-quality and effective solutions. We
+                  prioritize products that meet stringent safety and efficacy
+                  standards to ensure your satisfaction and peace of mind.
                 </p>
                 <p className="mt-4">
-                  Amet consectetur adipisicing elit. Optio numquam enim facere.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolore rerum nostrum eius facere, ad neque.
+                  Whether you need household cleaners, disinfectants, or
+                  specialized cleaning equipment, we have got you covered. Our
+                  extensive range of products caters to both residential and
+                  commercial cleaning needs.
+                </p>
+                <p className="mt-4">
+                  We are committed to providing environmentally friendly
+                  options, offering eco-conscious cleaning solutions that
+                  minimize environmental impact without compromising on
+                  performance.
                 </p>
               </div>
             </div>
