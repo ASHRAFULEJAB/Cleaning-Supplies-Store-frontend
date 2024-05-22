@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Product } from "../types/types";
+import { useState } from "react";
 interface ProductDetailsPageProps {
   singleProduct: Product;
 }
@@ -11,6 +12,13 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
 }) => {
   const { title, price, ratings, brand, category, description, image } =
     singleProduct;
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (e: {
+    target: { checked: boolean | ((prevState: boolean) => boolean) };
+  }) => {
+    setIsChecked(e.target.checked);
+  };
   return (
     <div className=" lg:mx-28">
       <section className="py-12 sm:py-16 ">
@@ -72,6 +80,7 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
                       alt=""
                       width={400}
                       height={300}
+                      sizes="(max-width: 1024px) 100vw, 400px"
                     />
                   </div>
                 </div>
@@ -213,7 +222,8 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({
                     name="subscription"
                     value="8 Months"
                     className="peer sr-only"
-                    checked
+                    checked={isChecked}
+                    onChange={handleCheckboxChange}
                   />
                   <p className="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
                     Medium
